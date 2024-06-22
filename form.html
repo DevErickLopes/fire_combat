@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/form.css">
+    <title>Formulário</title>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Seção de Imagem -->
+        <div class="form-image">
+            <img src="assets/img/1718810746034.jpg" alt="">
+        </div>
+
+        <!-- Seção de Dados Pessoais -->
+        <div class="form" id="dados-pessoais">
+            <form id="dados-pessoais-form">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Cadastro de Alunos</h1>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="fullname">Nome Completo</label>
+                        <input id="fullname" type="text" name="fullname" placeholder="Digite seu nome" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="contact">Contato</label>
+                        <input id="contact" type="tel" name="contact" placeholder="(xx) xxxx-xxxx" pattern="\(\d{2}\) \d{4,5}-\d{4}" maxlength="15" oninput="formatarContato(this)" required>
+                    </div>
+                
+                    <div class="input-box">
+                        <label for="date">Data de Nascimento</label>
+                        <input id="date" type="date" name="date" required>
+                    </div>
+                    
+                    <div class="input-box">
+                        <label for="rg">RG</label>
+                        <input id="rg" type="text" name="rg" placeholder="xx.xxx.xxx-x" pattern="[0-9]{2}\.[0-9]{3}\.[0-9]{3}-[0-9]{1}" maxlength="12" oninput="formatarRG(this)" required>
+                    </div>
+                    
+
+                    <div class="input-box">
+                        <label for="cpf">CPF</label>
+                        <input id="cpf" type="text" name="cpf" placeholder="xxx.xxx.xxx-xx" pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}" maxlength="14" oninput="formatarCPF(this)" required>
+                    </div>
+                </div>
+
+                <div class="gender-inputs">
+                    <div class="gender-title">
+                        <h6>Gênero</h6>
+                    </div>
+
+                    <div class="gender-group">
+                        <div class="gender-input">
+                            <input id="female" type="radio" name="gender" value="Feminino" required>
+                            <label for="female">Feminino</label>
+                        </div>
+
+                        <div class="gender-input">
+                            <input id="male" type="radio" name="gender" value="Masculino" required>
+                            <label for="male">Masculino</label>
+                        </div>
+
+                        <div class="gender-input">
+                            <input id="others" type="radio" name="gender" value="Outros" required>
+                            <label for="others">Outros</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botão para mostrar a seção de Endereço -->
+                <div class="register-button">
+                    <button type="button" onclick="mostrarEndereco()">Próximo: Endereço</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Seção de Endereço -->
+        <div class="form hidden" id="endereco">
+            <form id="endereco-form">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Cadastro de Endereço</h1>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="cep">CEP</label>
+                        <input id="cep" type="text" name="cep" placeholder="Digite seu CEP" maxlength="9" pattern="\d{5}-\d{3}" oninput="formatarCEP(this)" required>
+                    </div>
+                    
+
+                    <div class="input-box">
+                        <label for="endereco">Endereço</label>
+                        <input id="endereco" type="text" name="endereco" placeholder="Digite seu endereço" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="numero">Número</label>
+                        <input id="numero" type="text" name="numero" placeholder="Número da residência" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="complemento">Complemento</label>
+                        <input id="complemento" type="text" name="complemento" placeholder="Complemento (opcional)">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="bairro">Bairro</label>
+                        <input id="bairro" type="text" name="bairro" placeholder="Digite seu bairro" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="cidade">Cidade</label>
+                        <input id="cidade" type="text" name="cidade" placeholder="Digite sua cidade" required>
+                    </div>
+                </div>
+
+                <!-- Botões para navegação -->
+                <div class="register-button">
+                    <button type="button" onclick="voltarDadosPessoais()">Voltar: Dados Pessoais</button>
+                    <button type="button" onclick="mostrarCursos()">Próximo: Cursos Pretendidos</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Seção de Cursos Pretendidos -->
+        <div class="form hidden" id="cursos">
+            <form id="cursos-form">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Cursos Pretendidos</h1>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="curso_bombeiro">Bombeiro Civil</label>
+                        <input id="curso_bombeiro" type="checkbox" name="curso_bombeiro" value="Bombeiro Civil">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="curso_socorrista">Socorrista</label>
+                        <input id="curso_socorrista" type="checkbox" name="curso_socorrista" value="Socorrista">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="curso_nr">NR's</label>
+                        <input id="curso_nr" type="checkbox" name="curso_nr" value="NR's">
+                    </div>
+                </div>
+
+                <!-- Botões para navegação -->
+                <div class="register-button">
+                    <button type="button" onclick="voltarEndereco()">Voltar: Endereço</button>
+                    <button type="button" onclick="mostrarComoConheceu()">Próximo: Como Conheceu a Empresa?</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Seção de Como Conheceu a Empresa -->
+        <div class="form hidden" id="como-conheceu">
+            <form id="como-conheceu-form" action="cadastrar.php" method="POST">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Como Conheceu a Empresa?</h1>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="conheceu_amigos">Amigos</label>
+                        <input id="conheceu_amigos" type="checkbox" name="conheceu_amigos" value="Amigos">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="conheceu_redes_sociais">Redes Sociais</label>
+                        <input id="conheceu_redes_sociais" type="checkbox" name="conheceu_redes_sociais" value="Redes Sociais">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="conheceu_ouvi_falar">Ouvi Falar</label>
+                        <input id="conheceu_ouvi_falar" type="checkbox" name="conheceu_ouvi_falar" value="Ouvi Falar">
+                    </div>
+
+                    <div class="input-box">
+                        <label for="conheceu_outros">Outros</label>
+                        <input id="conheceu_outros" type="text" name="conheceu_outros" placeholder="Outros meios">
+                    </div>
+                </div>
+
+                <!-- Botões para navegação -->
+                <div class="register-button">
+                    <button type="button" onclick="voltarCursos()">Voltar: Cursos Pretendidos</button>
+                    <button type="submit">Finalizar Cadastro</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Mensagem de Cadastro Efetuado com Sucesso -->
+        <div class="form hidden" id="mensagem-sucesso">
+            <div class="form-header">
+                <div class="title">
+                    <h1>Cadastro Efetuado com Sucesso!</h1>
+                </div>
+            </div>
+            <div class="register-button">
+                <button onclick="cadastrarNovoAluno()">Cadastrar Novo Aluno</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

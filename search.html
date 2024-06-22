@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/search.css">
+    <title>Pesquisar Alunos</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Pesquisar Alunos Cadastrados</h1>
+        <div class="input-group">
+            <div class="input-box">
+                <label for="search-name">Nome do Aluno</label>
+                <input id="search-name" type="text" name="search-name" placeholder="Digite o nome do aluno" required>
+            </div>
+        </div>
+        <div class="register-button">
+            <button onclick="pesquisarAluno()">Pesquisar</button>
+        </div>
+        <div id="search-results" class="hidden">
+            <!-- Aqui os resultados da pesquisa serão exibidos -->
+        </div>
+    </div>
+
+    <!-- Botão de retorno para index.html -->
+    <div class="back-button">
+        <button onclick="window.location.href='index.html'">Voltar para Página Inicial</button>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

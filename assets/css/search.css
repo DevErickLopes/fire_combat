@@ -1,0 +1,91 @@
+body {
+    background-color: #6e0000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.container {
+    text-align: center;
+    margin-top: 2rem; /* Espaçamento acima do conteúdo */
+}
+
+.container h1 {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.input-box {
+    margin-bottom: 1rem;
+}
+
+.input-box label {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.input-box input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+    font-size: 1rem;
+}
+
+.register-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem; /* Espaçamento acima do botão */
+}
+
+.register-button button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #6e0000;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    width: 200px; /* Largura fixa para o botão */
+    margin: 0 10px; /* Espaçamento horizontal entre botões */
+}
+
+.register-button button:hover {
+    background-color: #e0e0e0;
+}
+.back-button button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #6e0000;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    width: 200px; /* Largura fixa para o botão */
+    margin: 0 10px; /* Espaçamento horizontal entre botões */
+}
+
+.back-button button:hover {
+    background-color: #e0e0e0;
+}
+
+.hidden {
+    display: none;
+}
